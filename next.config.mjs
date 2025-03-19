@@ -1,6 +1,10 @@
-let userConfig = undefined
+import path from 'path';
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+
+let userConfig = undefined;
 try {
-  userConfig = await import('./v0-user-next.config')
+  userConfig = await import('./v0-user-next.config');
 } catch (e) {
   // ignore error
 }
@@ -18,13 +22,23 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-}
+  webpack(config) {
+    // Adding rules to handle CSS files
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+      include: path.resolve(__dirname, 'styles'),  // Adjusted to point to the 'styles' folder
+    });
 
-mergeConfig(nextConfig, userConfig)
+    return config;
+  },
+};
+
+mergeConfig(nextConfig, userConfig);
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {
-    return
+    return;
   }
 
   for (const key in userConfig) {
@@ -35,11 +49,11 @@ function mergeConfig(nextConfig, userConfig) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...userConfig[key],
-      }
+      };
     } else {
-      nextConfig[key] = userConfig[key]
+      nextConfig[key] = userConfig[key];
     }
   }
 }
 
-export default nextConfig
+export default nextConfig;

@@ -4,7 +4,10 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18-bullseye",
 	"features": {
-	  "ghcr.io/devcontainers-contrib/features/jshint:2": {}
+		"ghcr.io/devcontainers-contrib/features/jshint:2": {},
+		"ghcr.io/devcontainers/features/node:1": {
+			"installDevDependencies": true
+		}
 	},
   
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -26,4 +29,4 @@
   
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-  }
+}

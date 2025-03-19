@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
 import { AnimatedSection, HoverCard } from "@/components/ui/animated-elements"
 import { HomeGallery } from "@/components/home-gallery"
+import './globals.css';  // Ensure this path is correct based on where your file is located
+
 
 /**
  * Home Page Component
