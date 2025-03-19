@@ -1,0 +1,404 @@
+/* Import Tailwind CSS base styles */
+@tailwind base;
+/* Import Tailwind CSS component styles */
+@tailwind components;
+/* Import Tailwind CSS utility styles */
+@tailwind utilities;
+
+/* Base layer customizations */
+@layer base {
+  /* CSS variables for theme colors */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode color variables */
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+/* Base element styling */
+@layer base {
+  /* Apply border color to all elements */
+  * {
+    @apply border-border;
+  }
+
+  /* Base body styling */
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Heading styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Responsive heading sizes */
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+/* Component layer customizations */
+@layer components {
+  /* Container for charity sections */
+  .charity-container {
+    @apply container mx-auto px-4 py-12 md:py-16 lg:py-24;
+  }
+
+  /* Section title styling */
+  .section-title {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8;
+  }
+
+  /* Section subtitle styling */
+  .section-subtitle {
+    @apply text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12;
+  }
+
+  /* Card styling for charity components */
+  .charity-card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden;
+  }
+
+  /* Primary button styling */
+  .charity-button-primary {
+    @apply bg-primary text-white hover:bg-primary/90 transition-colors;
+  }
+
+  /* Accent button styling */
+  .charity-button-accent {
+    @apply bg-accent text-white hover:bg-accent/90 transition-colors;
+  }
+
+  /* Outline button styling */
+  .charity-button-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary/5 transition-colors;
+  }
+
+  /* Link styling */
+  .charity-link {
+    @apply text-primary hover:text-primary/80 underline-offset-4 hover:underline transition-colors;
+  }
+
+  /* Gradient background */
+  .charity-gradient {
+    @apply bg-gradient-to-r from-primary to-accent text-white;
+  }
+
+  /* Pattern background */
+  .charity-pattern {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230B4EA2' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+/* Utility layer customizations */
+@layer utilities {
+  /* Hero section overlay */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Slovak pattern background */
+  .slovak-pattern {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230052B4' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Stats grid layout */
+  .stats-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 p-8;
+  }
+
+  /* Stat card styling */
+  .stat-card {
+    @apply flex flex-col items-center justify-center p-6 rounded-lg bg-white shadow-md transition-all duration-300 hover:shadow-xl;
+  }
+
+  /* Stat number styling */
+  .stat-number {
+    @apply text-4xl font-bold text-primary mb-2;
+  }
+
+  /* Stat label styling */
+  .stat-label {
+    @apply text-sm text-muted-foreground text-center;
+  }
+
+  /* Testimonial card styling */
+  .testimonial-card {
+    @apply relative p-6 bg-white rounded-lg shadow-md;
+  }
+
+  /* Testimonial quote styling */
+  .testimonial-quote {
+    @apply absolute -top-4 -left-4 text-6xl text-primary opacity-20;
+  }
+
+  /* Text gradient effect */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Border gradient effect */
+  .border-gradient {
+    border-image: linear-gradient(to right, #0b4ea2, #ee1c25) 1;
+  }
+
+  /* Impact card styling */
+  .impact-card {
+    @apply p-6 rounded-lg bg-white shadow-md border-l-4 border-primary;
+  }
+
+  /* Volunteer card styling */
+  .volunteer-card {
+    @apply p-6 rounded-lg bg-white shadow-md border-l-4 border-accent;
+  }
+
+  /* Donation card styling */
+  .donation-card {
+    @apply p-6 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 shadow-md;
+  }
+
+  /* Animation for elements entering the viewport */
+  .animate-in {
+    animation: animate-in 0.5s ease-out;
+  }
+
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover scale effect */
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Event card styling */
+.event-card {
+  @apply relative overflow-hidden rounded-lg transition-all duration-300;
+}
+
+.event-card:hover img {
+  @apply scale-110 transition-transform duration-500;
+}
+
+.event-card-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.event-card:hover .event-card-overlay {
+  @apply opacity-100;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0b4ea2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ee1c25;
+}
+
+/* Video Background Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  video {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Make background video responsive */
+video.bg-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+/* Improve hero overlay */
+.hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80;
+  z-index: 1;
+}
+
+//
+Add
+  these
+  styles
+  to
+  the
+  end
+  of
+  the
+  file
+  to
+  enhance
+  the
+  video
+  presentation /* Video container styling */
+  .video-container {
+  @apply relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Video glow effect */
+.video-glow {
+  @apply absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur opacity-25;
+  animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.15;
+    blur: 8px;
+  }
+  100% {
+    opacity: 0.3;
+    blur: 12px;
+  }
+}
+
+/* Video controls styling */
+video::-webkit-media-controls-panel {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}
+
+video::-webkit-media-controls-play-button {
+  @apply text-primary;
+}
+
+/* Responsive aspect ratio container */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  /* Fallback for browsers that don't support aspect-ratio */
+  .aspect-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  }
+
+  .aspect-video > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
